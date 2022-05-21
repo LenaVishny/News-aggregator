@@ -15,8 +15,7 @@ const response = await fetch(url, {
 });
 
     const data = await response.json();
-
-    return data
+    return data;
 };
 
 const renderCard = (data) => {
@@ -37,7 +36,6 @@ const renderCard = (data) => {
             <div class="news-author">${news.author}</div>
         </div>
         `;
-
         newsList.append(card);
     });
 }
@@ -46,5 +44,4 @@ const loadNews = async () => {
     const data = await getdata('https://newsapi.org/v2/top-headlines?country=ru');
     renderCard(data.articles);
 };
-
 loadNews();
